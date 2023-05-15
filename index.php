@@ -11,12 +11,14 @@
         .row {
            display: flex; 
            justify-content: center; 
-           lign-items: center;"
+           align-items: center;"
         }
 
         .form-group {
             font-weight: bold ;
-            text-align: center;
+            text-align: left;
+            margin-left:20px;
+            width: 500px;
         }
         
     </style>

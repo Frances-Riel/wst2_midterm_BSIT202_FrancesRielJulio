@@ -7,6 +7,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .row {
+           display: flex; 
+           justify-content: center; 
+           align-items: center;"
+        }
+
+        .form-group {
+            font-weight: bold ;
+            text-align: left;
+            margin-left:20px;
+            width: 500px;
+        }
+    </style>
 </head>
 <body>
     <div id="preloader">
@@ -18,7 +32,7 @@
         <div class="row" style="display: flex; justify-content: center; align-items: center;">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-15">
+                    <div class="col-md-20">
                         <h1>Login</h1>
                         <div id="login_status"></div>
                         <form id="login">
