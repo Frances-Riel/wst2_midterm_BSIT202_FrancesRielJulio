@@ -15,9 +15,9 @@
         }
 
         .form-group {
-            font-weight: bold   ;
-            
+            font-weight: bold;
         }
+        
     </style>
 </head>
 <body>

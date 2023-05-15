@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,7 +38,7 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `username`, `password`, `name`) VALUES
+INSERT INTO `accounts` (`id`, `email`, `password`, `name`) VALUES
 (1, 'Myth', 'root', 'Timothy'),
 (2, 'Yelle', 'root', 'Frances'),
 (3, '', '', ''),
@@ -86,7 +86,7 @@ ALTER TABLE `accounts`
 --
 -- Indexes for table `chats`
 --
-ALTER TABLE `chats`
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`account_id`);
 
 --
@@ -102,7 +102,7 @@ ALTER TABLE `accounts`
 --
 -- AUTO_INCREMENT for table `chats`
 --
-ALTER TABLE `chats`
+ALTER TABLE `messages`
   MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
