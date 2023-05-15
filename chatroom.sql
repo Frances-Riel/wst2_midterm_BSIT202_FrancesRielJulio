@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2023 at 01:06 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: May 15, 2023 at 05:16 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,50 +28,44 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accounts` (
-  `id` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `ID` int(11) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Timestamp` time NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `email`, `password`, `name`) VALUES
-(1, 'Myth', 'root', 'Timothy'),
-(2, 'Yelle', 'root', 'Frances'),
-(3, '', '', ''),
-(4, 'Ces', 'cravings01', 'Frances Riel Julio'),
-(5, 'cessy', 'mimimi', 'ces'),
-(6, 'rooky_01', 'rururuki', 'rooky'),
-(7, 'armae11', 'happy', 'armae'),
-(8, 'casey11', 'phonecase', 'casey'),
-(9, 'cessy1', 'needfood', 'frances '),
-(10, 'cessyypot', 'hahaha01', 'frances riel '),
-(11, 'cessyypot01', 'hey01', 'frances riel '),
-(12, 'kyu1', 'kyu', 'kyukyu');
+INSERT INTO `accounts` (`ID`, `Email`, `Password`, `Name`, `Timestamp`) VALUES
+(1, 'yelle@gmail.com', 'hungrynako', 'riel', '10:14:30'),
+(2, 'neiayik@gmail.com', 'iyakinako', 'neia cute', '10:56:05'),
+(3, 'haha@gmail.com', 'hahaha', 'hahaha', '11:09:06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chats`
+-- Table structure for table `messages`
 --
 
-CREATE TABLE `chats` (
+CREATE TABLE `messages` (
+  `ID` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
-  `message` varchar(999) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `message` varchar(500) NOT NULL,
+  `timestamp` time NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `chats`
+-- Dumping data for table `messages`
 --
 
-INSERT INTO `chats` (`account_id`, `message`, `timestamp`) VALUES
-(1, 'HI', '2023-05-11 13:12:14'),
-(2, 'gutom pa ko', '2023-05-11 13:57:31'),
-(4, 'lalalalala', '2023-05-11 15:38:23');
+INSERT INTO `messages` (`ID`, `account_id`, `message`, `timestamp`) VALUES
+(1, 1, 'hello', '10:28:31'),
+(2, 1, 'hellooo', '10:28:47'),
+(3, 2, 'hallo', '10:57:03'),
+(4, 3, 'hahaha', '11:09:36');
 
 --
 -- Indexes for dumped tables
@@ -81,13 +75,13 @@ INSERT INTO `chats` (`account_id`, `message`, `timestamp`) VALUES
 -- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `chats`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
-  ADD PRIMARY KEY (`account_id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -97,13 +91,13 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `chats`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
