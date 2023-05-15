@@ -13,13 +13,13 @@ $('.register').click(function(){
         success:function(e){
             if(e == 'success'){
                 $('#registration_status').html('<p class="alert alert-success">Successfully Registered</p>')
-                $('#username').val('')
+                $('#email').val('')
                 $('#password').val('')
                 $('#name').val('')
                alert("Successfully Registered, proceed to Log In");
               
-            }else if(e == 'username already exist'){
-                $('#registration_status').html('<p class="alert alert-danger">Username already exists!</p>')
+            }else if(e == 'email already exist'){
+                $('#registration_status').html('<p class="alert alert-danger">Email already exists!</p>')
             } else if (e == 'empty field') {
                 $('#registration_status').html('<p class="alert alert-danger">Empty Field!</p>')
             }
@@ -41,8 +41,8 @@ $('.login').click(function(){
             if(e == 'success'){
                 $('#login_status').html('<p class="alert alert-success">Successfully Logged In</p>')
                 window.location.href = 'profile.php';
-            }else if(e == 'Invalid Username or Password'){
-                $('#login_status').html('<p class="alert alert-danger">Invalid Username or Password</p>')
+            }else if(e == 'Invalid Email or Password'){
+                $('#login_status').html('<p class="alert alert-danger">Invalid Email or Password</p>')
             }
             $('#preloader').css({'display':'none'})
         }
