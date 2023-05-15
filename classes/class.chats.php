@@ -34,7 +34,7 @@ class Chats{
 
         $html = '';
         foreach($data as $message){
-            if($id == $message['ID']){
+            if($id == $message['id']){
                 $html.='<div>
                 <div class="col-md-4 bg-primary p-1 float-end mb-2">
                     <p class="text-white">You</p>
